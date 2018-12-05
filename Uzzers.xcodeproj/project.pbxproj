@@ -13,6 +13,8 @@
 		D74DF57D21B84C300073B3F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74DF57B21B84C300073B3F9 /* Main.storyboard */; };
 		D74DF57F21B84C430073B3F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74DF57E21B84C430073B3F9 /* Assets.xcassets */; };
 		D74DF58221B84C430073B3F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74DF58021B84C430073B3F9 /* LaunchScreen.storyboard */; };
+		D74DF58B21B850590073B3F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74DF58A21B850590073B3F9 /* User.swift */; };
+		D74DF58D21B8506B0073B3F9 /* EmailAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74DF58C21B8506B0073B3F9 /* EmailAddress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		D74DF57E21B84C430073B3F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D74DF58121B84C430073B3F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D74DF58321B84C430073B3F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D74DF58A21B850590073B3F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D74DF58C21B8506B0073B3F9 /* EmailAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddress.swift; sourceTree = "<group>"; };
 		F662E4A13CD545025CCC0B32 /* Pods_Uzzers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Uzzers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,6 +74,7 @@
 		D74DF57621B84C300073B3F9 /* Uzzers */ = {
 			isa = PBXGroup;
 			children = (
+				D74DF58921B8503B0073B3F9 /* Model */,
 				D74DF57721B84C300073B3F9 /* AppDelegate.swift */,
 				D74DF57921B84C300073B3F9 /* ViewController.swift */,
 				D74DF57B21B84C300073B3F9 /* Main.storyboard */,
@@ -78,6 +83,15 @@
 				D74DF58321B84C430073B3F9 /* Info.plist */,
 			);
 			path = Uzzers;
+			sourceTree = "<group>";
+		};
+		D74DF58921B8503B0073B3F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D74DF58A21B850590073B3F9 /* User.swift */,
+				D74DF58C21B8506B0073B3F9 /* EmailAddress.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		DBAB3BFFEA1A8105C40EA68B /* Frameworks */ = {
@@ -214,6 +228,8 @@
 			files = (
 				D74DF57A21B84C300073B3F9 /* ViewController.swift in Sources */,
 				D74DF57821B84C300073B3F9 /* AppDelegate.swift in Sources */,
+				D74DF58B21B850590073B3F9 /* User.swift in Sources */,
+				D74DF58D21B8506B0073B3F9 /* EmailAddress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
