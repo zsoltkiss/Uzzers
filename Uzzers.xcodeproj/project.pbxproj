@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B322683F6EB85FF4BC9A3FBA /* Pods_Uzzers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F662E4A13CD545025CCC0B32 /* Pods_Uzzers.framework */; };
 		D74DF57821B84C300073B3F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74DF57721B84C300073B3F9 /* AppDelegate.swift */; };
 		D74DF57A21B84C300073B3F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74DF57921B84C300073B3F9 /* ViewController.swift */; };
 		D74DF57D21B84C300073B3F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74DF57B21B84C300073B3F9 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FE116324BA4B5766F47495E /* Pods-Uzzers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uzzers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Uzzers/Pods-Uzzers.debug.xcconfig"; sourceTree = "<group>"; };
+		D34C0A96AD4DA5CA13317F80 /* Pods-Uzzers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uzzers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Uzzers/Pods-Uzzers.release.xcconfig"; sourceTree = "<group>"; };
 		D74DF57421B84C300073B3F9 /* Uzzers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uzzers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74DF57721B84C300073B3F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D74DF57921B84C300073B3F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		D74DF57E21B84C430073B3F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D74DF58121B84C430073B3F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D74DF58321B84C430073B3F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F662E4A13CD545025CCC0B32 /* Pods_Uzzers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Uzzers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B322683F6EB85FF4BC9A3FBA /* Pods_Uzzers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66BA218DF3FBF12D458674D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2FE116324BA4B5766F47495E /* Pods-Uzzers.debug.xcconfig */,
+				D34C0A96AD4DA5CA13317F80 /* Pods-Uzzers.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D74DF56B21B84C2F0073B3F9 = {
 			isa = PBXGroup;
 			children = (
 				D74DF57621B84C300073B3F9 /* Uzzers */,
 				D74DF57521B84C300073B3F9 /* Products */,
+				66BA218DF3FBF12D458674D5 /* Pods */,
+				DBAB3BFFEA1A8105C40EA68B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = Uzzers;
 			sourceTree = "<group>";
 		};
+		DBAB3BFFEA1A8105C40EA68B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F662E4A13CD545025CCC0B32 /* Pods_Uzzers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D74DF58621B84C430073B3F9 /* Build configuration list for PBXNativeTarget "Uzzers" */;
 			buildPhases = (
+				5ABA6A927FE750DEED38D7B0 /* [CP] Check Pods Manifest.lock */,
 				D74DF57021B84C300073B3F9 /* Sources */,
 				D74DF57121B84C300073B3F9 /* Frameworks */,
 				D74DF57221B84C300073B3F9 /* Resources */,
+				BEAE8601693E2AD684853F09 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5ABA6A927FE750DEED38D7B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Uzzers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEAE8601693E2AD684853F09 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Uzzers/Pods-Uzzers-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Uzzers/Pods-Uzzers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D74DF57021B84C300073B3F9 /* Sources */ = {
@@ -280,6 +357,7 @@
 		};
 		D74DF58721B84C430073B3F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FE116324BA4B5766F47495E /* Pods-Uzzers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +376,7 @@
 		};
 		D74DF58821B84C430073B3F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D34C0A96AD4DA5CA13317F80 /* Pods-Uzzers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
