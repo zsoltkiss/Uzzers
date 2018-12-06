@@ -11,18 +11,19 @@ import RealmSwift
 
 class EmailAddress: Object {
     
-    convenience init(email: String) {
+    convenience init(email: String, user: User) {
         self.init()
         self.email = email
+        self.owner = user
     }
     
     @objc dynamic var email: String = ""
-    @objc dynamic var id = UUID().uuidString
+    @objc dynamic var owner: User?
     
     override static func primaryKey() -> String? {
         return EmailAddress.pkField
     }
     
-    private static let pkField = "id"
+    private static let pkField = "email"
     
 }

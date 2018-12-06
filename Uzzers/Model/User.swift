@@ -17,23 +17,8 @@ class User: Object {
         self.tsBirthday = timestamp
     }
     
-    private(set) var name: String = ""
-    private(set) var tsBirthday: TimeInterval = 0.0
-    private(set) var emails = [EmailAddress]()
-    
-    var isEmailProvided: Bool {
-        return emails.count > 0
-    }
-    
-    func addEmailAddress(email: String) -> Bool {
-        let emailStrings = emails.map { $0.email }
-        
-        guard !emailStrings.contains(email) else {
-            return false
-        }
-        
-        emails.append(EmailAddress(email: email))
-        return true
-    }
+    @objc dynamic private(set) var name: String = ""
+    @objc dynamic private(set) var tsBirthday: TimeInterval = 0.0
+    var emails = List<EmailAddress>()
     
 }

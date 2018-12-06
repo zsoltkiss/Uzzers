@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B322683F6EB85FF4BC9A3FBA /* Pods_Uzzers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F662E4A13CD545025CCC0B32 /* Pods_Uzzers.framework */; };
+		D700909E21B9A0FC00BCF9B4 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D700909D21B9A0FC00BCF9B4 /* AddUserViewController.swift */; };
 		D74DF57821B84C300073B3F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74DF57721B84C300073B3F9 /* AppDelegate.swift */; };
-		D74DF57A21B84C300073B3F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74DF57921B84C300073B3F9 /* ViewController.swift */; };
+		D74DF57A21B84C300073B3F9 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74DF57921B84C300073B3F9 /* UserListViewController.swift */; };
 		D74DF57D21B84C300073B3F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74DF57B21B84C300073B3F9 /* Main.storyboard */; };
 		D74DF57F21B84C430073B3F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D74DF57E21B84C430073B3F9 /* Assets.xcassets */; };
 		D74DF58221B84C430073B3F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74DF58021B84C430073B3F9 /* LaunchScreen.storyboard */; };
@@ -20,9 +21,10 @@
 /* Begin PBXFileReference section */
 		2FE116324BA4B5766F47495E /* Pods-Uzzers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uzzers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Uzzers/Pods-Uzzers.debug.xcconfig"; sourceTree = "<group>"; };
 		D34C0A96AD4DA5CA13317F80 /* Pods-Uzzers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uzzers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Uzzers/Pods-Uzzers.release.xcconfig"; sourceTree = "<group>"; };
+		D700909D21B9A0FC00BCF9B4 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 		D74DF57421B84C300073B3F9 /* Uzzers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uzzers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74DF57721B84C300073B3F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D74DF57921B84C300073B3F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D74DF57921B84C300073B3F9 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		D74DF57C21B84C300073B3F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D74DF57E21B84C430073B3F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D74DF58121B84C430073B3F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +55,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D700909C21B9A0DA00BCF9B4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D74DF57921B84C300073B3F9 /* UserListViewController.swift */,
+				D700909D21B9A0FC00BCF9B4 /* AddUserViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		D74DF56B21B84C2F0073B3F9 = {
 			isa = PBXGroup;
 			children = (
@@ -74,9 +85,9 @@
 		D74DF57621B84C300073B3F9 /* Uzzers */ = {
 			isa = PBXGroup;
 			children = (
+				D700909C21B9A0DA00BCF9B4 /* ViewControllers */,
 				D74DF58921B8503B0073B3F9 /* Model */,
 				D74DF57721B84C300073B3F9 /* AppDelegate.swift */,
-				D74DF57921B84C300073B3F9 /* ViewController.swift */,
 				D74DF57B21B84C300073B3F9 /* Main.storyboard */,
 				D74DF57E21B84C430073B3F9 /* Assets.xcassets */,
 				D74DF58021B84C430073B3F9 /* LaunchScreen.storyboard */,
@@ -226,7 +237,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D74DF57A21B84C300073B3F9 /* ViewController.swift in Sources */,
+				D700909E21B9A0FC00BCF9B4 /* AddUserViewController.swift in Sources */,
+				D74DF57A21B84C300073B3F9 /* UserListViewController.swift in Sources */,
 				D74DF57821B84C300073B3F9 /* AppDelegate.swift in Sources */,
 				D74DF58B21B850590073B3F9 /* User.swift in Sources */,
 				D74DF58D21B8506B0073B3F9 /* EmailAddress.swift in Sources */,
