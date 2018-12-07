@@ -11,13 +11,13 @@ import RealmSwift
 
 class AddUserViewController: UIViewController {
     
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tfName: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
     
     private var emailAddresses = [String]()
     private let cellID = "EmailAddressCell"
+    private let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     
     private var theRealm: Realm?
     
@@ -25,6 +25,8 @@ class AddUserViewController: UIViewController {
         case invalidEmailAddress = "error.invalidEmail"
         case missingEmailAddress = "error.missingEmail"
         case missingName = "error.missingName"
+        case nameDuplication = "error.nameAlreadyExists"
+        case emailAddressDuplication = "error.emailAddressAlreadyExists"
     }
     
     override func viewDidLoad() {
@@ -41,8 +43,13 @@ class AddUserViewController: UIViewController {
         }
         
         if let error = validate() {
-            print(error.rawValue)
-            // TODO: display error to users
+            switch error {
+            case .nameDuplication:
+                tfName.text = nil
+            default:
+                break
+            }
+            displayError(title: "Error", message: error.rawValue)
         } else {
             print("No validation error")
             
@@ -78,28 +85,51 @@ class AddUserViewController: UIViewController {
         
         let newEmail = tfEmail.text!
         
-        if !emailAddresses.contains(newEmail) {
-            emailAddresses.append(newEmail)
-            print("Email address to add: \(newEmail)")
+        guard isValidEmail(userInput: newEmail) else {
+            displayError(title: "Error", message: ValidationError.invalidEmailAddress.rawValue)
+            return
         }
         
+        guard emailAddresses.contains(newEmail) == false else {
+            displayError(title: "Error", message: ValidationError.emailAddressDuplication.rawValue)
+            return
+        }
+        
+        emailAddresses.append(newEmail)
+        print("Email address to add: \(newEmail)")
         tfEmail.text = nil
         
         tableView.reloadData()
     }
     
     private func validate() -> ValidationError? {
-        // TODO: add email validation
+        guard let userInputName = tfName.text else {
+            return ValidationError.missingName
+        }
+        
+        guard userInputName.isEmpty == false else {
+            return ValidationError.missingName
+        }
+        
+        guard isNameExist(name: userInputName) == false else {
+            return ValidationError.nameDuplication
+        }
         
         guard emailAddresses.count > 0 else {
             return ValidationError.missingEmailAddress
         }
         
-        guard tfName.text?.isEmpty == false else {
-            return ValidationError.missingName
-        }
-        
         return nil
+    }
+    
+    private func isNameExist(name: String) -> Bool {
+        let results = theRealm!.objects(User.self).filter("name = %@", name)
+        return results.count > 0
+    }
+    
+    private func isValidEmail(userInput: String) -> Bool {
+        let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return predicate.evaluate(with: userInput)
     }
     
     private func dismissEditor() {
@@ -108,6 +138,13 @@ class AddUserViewController: UIViewController {
         }
         
         nc.popViewController(animated: true)
+    }
+    
+    private func displayError(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let actionOK = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(actionOK)
+        present(alertController, animated: true, completion: nil)
     }
     
 }

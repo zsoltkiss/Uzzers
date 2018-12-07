@@ -13,7 +13,7 @@ class UserListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var users = [User]()
+    private var users: Results<User>!
     private let cellID = "UserCell"
     
     private var theRealm: Realm?
@@ -37,10 +37,8 @@ class UserListViewController: UIViewController {
         }
         
         print("Realm file: \(String(describing: realm.configuration.fileURL))")
-        let results = realm.objects(User.self)
-        let array = Array(results)
-        users = array
-        print("Users fetched: \(users)")
+        users = realm.objects(User.self)
+        print("Users fetched: \(String(describing: users))")
         tableView.reloadData()
     }
 }

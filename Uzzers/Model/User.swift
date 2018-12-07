@@ -21,4 +21,10 @@ class User: Object {
     @objc dynamic private(set) var tsBirthday: TimeInterval = 0.0
     var emails = List<EmailAddress>()
     
+    override static func primaryKey() -> String? {
+        return User.pkField
+    }
+    
+    private static let pkField = "name"
+    
 }
