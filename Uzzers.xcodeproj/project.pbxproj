@@ -16,6 +16,7 @@
 		D74DF58221B84C430073B3F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D74DF58021B84C430073B3F9 /* LaunchScreen.storyboard */; };
 		D74DF58B21B850590073B3F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74DF58A21B850590073B3F9 /* User.swift */; };
 		D74DF58D21B8506B0073B3F9 /* EmailAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74DF58C21B8506B0073B3F9 /* EmailAddress.swift */; };
+		D76357FC21BB085C00B0494B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D76357FA21BB085C00B0494B /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		D74DF58321B84C430073B3F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D74DF58A21B850590073B3F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D74DF58C21B8506B0073B3F9 /* EmailAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddress.swift; sourceTree = "<group>"; };
+		D76357FB21BB085C00B0494B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F662E4A13CD545025CCC0B32 /* Pods_Uzzers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Uzzers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 				D74DF57E21B84C430073B3F9 /* Assets.xcassets */,
 				D74DF58021B84C430073B3F9 /* LaunchScreen.storyboard */,
 				D74DF58321B84C430073B3F9 /* Info.plist */,
+				D76357FA21BB085C00B0494B /* Localizable.strings */,
 			);
 			path = Uzzers;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D74DF58221B84C430073B3F9 /* LaunchScreen.storyboard in Resources */,
+				D76357FC21BB085C00B0494B /* Localizable.strings in Resources */,
 				D74DF57F21B84C430073B3F9 /* Assets.xcassets in Resources */,
 				D74DF57D21B84C300073B3F9 /* Main.storyboard in Resources */,
 			);
@@ -262,6 +266,14 @@
 				D74DF58121B84C430073B3F9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D76357FA21BB085C00B0494B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D76357FB21BB085C00B0494B /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

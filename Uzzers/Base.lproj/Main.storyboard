@@ -68,19 +68,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="euI-xg-Dxo">
-                                <rect key="frame" x="20" y="196" width="285" height="30"/>
+                                <rect key="frame" x="20" y="277" width="285" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8c-S2-hvb">
-                                <rect key="frame" x="20" y="165" width="114" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8c-S2-hvb">
+                                <rect key="frame" x="20" y="165" width="97" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPa-g6-KBp">
-                                <rect key="frame" x="325" y="193" width="30" height="36"/>
+                                <rect key="frame" x="325" y="274" width="30" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="+"/>
                                 <connections>
@@ -88,7 +88,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y7d-np-hga">
-                                <rect key="frame" x="0.0" y="236" width="375" height="381"/>
+                                <rect key="frame" x="0.0" y="317" width="375" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XJ-v0-QtE">
@@ -98,19 +98,35 @@
                                     <action selector="createButtonDidTap:" destination="URa-g6-Ikv" eventType="touchUpInside" id="ebx-43-edN"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oJ-FV-LcV">
+                                <rect key="frame" x="20" y="246" width="114" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="2000-01-01" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucY-bD-bEV">
+                                <rect key="frame" x="20" y="196" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0Li-2a-2bV" firstAttribute="trailing" secondItem="GPa-g6-KBp" secondAttribute="trailing" constant="20" id="1Gn-iq-a5a"/>
+                            <constraint firstItem="ucY-bD-bEV" firstAttribute="leading" secondItem="b8c-S2-hvb" secondAttribute="leading" id="819-bS-RWK"/>
                             <constraint firstItem="0Li-2a-2bV" firstAttribute="trailing" secondItem="zDs-ea-4dp" secondAttribute="trailing" constant="20" id="9bU-2S-cHI"/>
+                            <constraint firstItem="ucY-bD-bEV" firstAttribute="top" secondItem="b8c-S2-hvb" secondAttribute="bottom" constant="10" id="CNV-Ua-8gE"/>
                             <constraint firstItem="9XJ-v0-QtE" firstAttribute="top" secondItem="y7d-np-hga" secondAttribute="bottom" constant="10" id="Cmm-Ei-u0W"/>
+                            <constraint firstItem="euI-xg-Dxo" firstAttribute="top" secondItem="2oJ-FV-LcV" secondAttribute="bottom" constant="10" id="GTo-Lb-6Xy"/>
+                            <constraint firstItem="0Li-2a-2bV" firstAttribute="trailing" secondItem="ucY-bD-bEV" secondAttribute="trailing" constant="20" id="Sya-Yb-Bep"/>
                             <constraint firstItem="zDs-ea-4dp" firstAttribute="top" secondItem="1ee-CH-oew" secondAttribute="bottom" constant="10" id="Tmm-2Z-dhW"/>
                             <constraint firstItem="y7d-np-hga" firstAttribute="top" secondItem="euI-xg-Dxo" secondAttribute="bottom" constant="10" id="Uef-64-lfR"/>
                             <constraint firstItem="1ee-CH-oew" firstAttribute="leading" secondItem="0Li-2a-2bV" secondAttribute="leading" constant="20" id="Ul7-nR-bXs"/>
                             <constraint firstItem="GPa-g6-KBp" firstAttribute="leading" secondItem="euI-xg-Dxo" secondAttribute="trailing" constant="20" id="Uwe-12-n7f"/>
                             <constraint firstItem="9XJ-v0-QtE" firstAttribute="centerX" secondItem="Meo-uz-mPz" secondAttribute="centerX" id="Vs7-BY-89b"/>
+                            <constraint firstItem="2oJ-FV-LcV" firstAttribute="top" secondItem="ucY-bD-bEV" secondAttribute="bottom" constant="20" id="WEE-wk-gDY"/>
                             <constraint firstItem="euI-xg-Dxo" firstAttribute="leading" secondItem="b8c-S2-hvb" secondAttribute="leading" id="XbN-zb-w8d"/>
-                            <constraint firstItem="euI-xg-Dxo" firstAttribute="top" secondItem="b8c-S2-hvb" secondAttribute="bottom" constant="10" id="ZI3-QZ-bBg"/>
                             <constraint firstItem="y7d-np-hga" firstAttribute="leading" secondItem="0Li-2a-2bV" secondAttribute="leading" id="fUK-1r-22p"/>
                             <constraint firstItem="0Li-2a-2bV" firstAttribute="trailing" secondItem="9XJ-v0-QtE" secondAttribute="trailing" constant="20" id="fqA-wX-yUW"/>
                             <constraint firstItem="9XJ-v0-QtE" firstAttribute="leading" secondItem="0Li-2a-2bV" secondAttribute="leading" constant="20" id="frO-cv-VEM"/>
@@ -121,11 +137,13 @@
                             <constraint firstItem="GPa-g6-KBp" firstAttribute="centerY" secondItem="euI-xg-Dxo" secondAttribute="centerY" id="nOe-lU-w0w"/>
                             <constraint firstItem="1ee-CH-oew" firstAttribute="top" secondItem="0Li-2a-2bV" secondAttribute="top" constant="20" id="nxG-G9-UQW"/>
                             <constraint firstItem="0Li-2a-2bV" firstAttribute="trailing" secondItem="y7d-np-hga" secondAttribute="trailing" id="sOb-J9-XB6"/>
+                            <constraint firstItem="2oJ-FV-LcV" firstAttribute="leading" secondItem="b8c-S2-hvb" secondAttribute="leading" id="xsH-VK-AKL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Li-2a-2bV"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="y7d-np-hga" id="4eW-6x-hva"/>
+                        <outlet property="tfDateOfBirth" destination="ucY-bD-bEV" id="bgB-w4-cx0"/>
                         <outlet property="tfEmail" destination="euI-xg-Dxo" id="J9Y-uP-3RF"/>
                         <outlet property="tfName" destination="zDs-ea-4dp" id="Vy4-FY-Zlj"/>
                     </connections>

@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Uzzers
+
+  Created by Kiss Rudolf Zsolt on 2018. 12. 07..
+  Copyright © 2018. Kiss Rudolf Zsolt. All rights reserved.
+*/
+"error.invalidEmail" = "Invalid email address.";
+"error.missingEmail" = "Missing email address.";
+"error.missingName" = "Missing name.";
+"error.nameAlreadyExists" = "There is a user already exists in the database with this name.";
+"error.emailAddressAlreadyExists" = "Email address is a duplicate.";
+"error.invalidDateOfBirth" = "Invalid birth date.";
+"error.title" = "Error";
