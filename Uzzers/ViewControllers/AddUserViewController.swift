@@ -62,7 +62,7 @@ class AddUserViewController: UIViewController {
             displayError(message: error.localizedDescription)
         } else {
             var emailObjects = [EmailAddress]()
-            let birthDate = retrieveDate(from: tfDateOfBirth.text!)
+            let birthDate = buildDate(from: tfDateOfBirth.text!)
             
             let newUser = User(name: tfName.text!, timestamp: birthDate!.timeIntervalSince1970)
             emailAddresses.forEach { (anEmail) in
@@ -127,7 +127,7 @@ class AddUserViewController: UIViewController {
             return ValidationError.invalidDate
         }
         
-        guard let _ = retrieveDate(from: userInputDate) else {
+        guard let _ = buildDate(from: userInputDate) else {
             return ValidationError.invalidDate
         }
         
@@ -151,6 +151,8 @@ class AddUserViewController: UIViewController {
     private func retrieveDate(from userInput: String) -> Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
+        formatter.calendar = NSCalendar.current
+        formatter.timeZone = TimeZone.current
         
         if let birthDate = formatter.date(from: userInput) {
             print("Valid birth date: \(birthDate)")
@@ -158,6 +160,32 @@ class AddUserViewController: UIViewController {
         }
         
         return nil
+    }
+    
+    private func buildDate(from userInput: String) -> Date? {
+        let parts = userInput.split(separator: "-")
+        
+        guard parts.count == 3 else {
+            return nil
+        }
+        
+        print("Date components: \(parts)")
+        
+        guard parts[0].count == 4 else {
+            return nil
+        }
+        
+        guard parts[1].count == 2 else {
+            return nil
+        }
+        
+        guard parts[2].count == 2 else {
+            return nil
+        }
+        
+        let cal = Calendar(identifier: .gregorian)
+        let comps = DateComponents(calendar: cal, timeZone: TimeZone.current, era: nil, year: (parts[0] as NSString).integerValue, month: (parts[1] as NSString).integerValue, day: (parts[2] as NSString).integerValue, hour: 12, minute: 0, second: 0, nanosecond: 0, weekday: nil, weekdayOrdinal: nil, quarter: nil, weekOfMonth: nil, weekOfYear: nil, yearForWeekOfYear: nil)
+        return cal.date(from: comps)
     }
     
     private func dismissEditor() {
