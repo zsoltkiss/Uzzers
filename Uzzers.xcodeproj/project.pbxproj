@@ -17,6 +17,7 @@
 		D74DF58B21B850590073B3F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74DF58A21B850590073B3F9 /* User.swift */; };
 		D74DF58D21B8506B0073B3F9 /* EmailAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74DF58C21B8506B0073B3F9 /* EmailAddress.swift */; };
 		D76357FC21BB085C00B0494B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D76357FA21BB085C00B0494B /* Localizable.strings */; };
+		D78B97E821C12037000C6068 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78B97E721C12037000C6068 /* DBService.swift */; };
 		D7B5D26321BFE4C200856574 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = D7B5D26221BFE4C200856574 /* Readme.md */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		D74DF58A21B850590073B3F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D74DF58C21B8506B0073B3F9 /* EmailAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddress.swift; sourceTree = "<group>"; };
 		D76357FB21BB085C00B0494B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D78B97E721C12037000C6068 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		D7B5D26221BFE4C200856574 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		F662E4A13CD545025CCC0B32 /* Pods_Uzzers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Uzzers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 		D74DF57621B84C300073B3F9 /* Uzzers */ = {
 			isa = PBXGroup;
 			children = (
+				D78B97E621C1201D000C6068 /* Service */,
 				D700909C21B9A0DA00BCF9B4 /* ViewControllers */,
 				D74DF58921B8503B0073B3F9 /* Model */,
 				D74DF57721B84C300073B3F9 /* AppDelegate.swift */,
@@ -109,6 +112,14 @@
 				D74DF58C21B8506B0073B3F9 /* EmailAddress.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D78B97E621C1201D000C6068 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D78B97E721C12037000C6068 /* DBService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		DBAB3BFFEA1A8105C40EA68B /* Frameworks */ = {
@@ -250,6 +261,7 @@
 				D74DF57821B84C300073B3F9 /* AppDelegate.swift in Sources */,
 				D74DF58B21B850590073B3F9 /* User.swift in Sources */,
 				D74DF58D21B8506B0073B3F9 /* EmailAddress.swift in Sources */,
+				D78B97E821C12037000C6068 /* DBService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

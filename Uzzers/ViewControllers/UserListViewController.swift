@@ -17,11 +17,8 @@ class UserListViewController: UIViewController {
     private var users: Results<User>!
     private let cellID = "UserCell"
     
-    private var theRealm: Realm?
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        theRealm = try? Realm()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.dataSource = self
         tableView.isHidden = true
@@ -33,14 +30,10 @@ class UserListViewController: UIViewController {
     }
 
     private func fetchUsers() {
-        guard let realm = theRealm else {
-            print("Realm instance hasn't been inited...")
-            return
+        users = DBService.shared.fetchUsers()
+        if (UIApplication.shared.delegate as! AppDelegate).isDebug {
+            print("Users fetched: \(String(describing: users))")
         }
-        
-        print("Realm file: \(String(describing: realm.configuration.fileURL))")
-        users = realm.objects(User.self)
-        print("Users fetched: \(String(describing: users))")
         
         if users.count > 0 {
             tableView.isHidden = false

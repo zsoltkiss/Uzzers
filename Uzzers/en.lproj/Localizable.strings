@@ -11,4 +11,6 @@
 "error.nameAlreadyExists" = "There is a user already exists in the database with this name.";
 "error.emailAddressAlreadyExists" = "Email address is a duplicate.";
 "error.invalidDateOfBirth" = "Invalid birth date.";
+"error.persistenceError" = "Underlying database layer failed when processing the operation.";
 "error.title" = "Error";
+

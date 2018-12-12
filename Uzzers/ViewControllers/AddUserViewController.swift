@@ -21,8 +21,6 @@ class AddUserViewController: UIViewController {
     private let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     private let errorTitle = NSLocalizedString("error.title", comment: "")
     
-    private var theRealm: Realm?
-    
     private enum ValidationError: String {
         case invalidEmailAddress = "error.invalidEmail"
         case missingEmailAddress = "error.missingEmail"
@@ -38,17 +36,11 @@ class AddUserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        theRealm = try? Realm()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.dataSource = self
     }
     
     @IBAction func createButtonDidTap(_ sender: UIButton) {
-        guard let realm = theRealm else {
-            print("Realm instance hasn't been inited...")
-            return
-        }
-        
         if let error = validate() {
             switch error {
             case .nameDuplication:
@@ -70,19 +62,12 @@ class AddUserViewController: UIViewController {
                 emailObjects.append(anObject)
             }
             
-            do {
-                try realm.write {
-                    realm.add(newUser)
-                    print("User added.")
-                    realm.add(emailObjects)
-                    print("User's email addresses added.")
-                    dismissEditor()
-                }
-            } catch {
-                print("Error occured when persisting User object. \(error)")
+            if let _ = DBService.shared.addUser(newUser, emails: emailObjects) {
+                displayError(message: NSLocalizedString("error.persistenceError", comment: ""))
+            } else {
+                dismissEditor()
             }
         }
-        
     }
     
     @IBAction func addButtonDidTap(_ sender: UIButton) {
@@ -104,9 +89,11 @@ class AddUserViewController: UIViewController {
         }
         
         emailAddresses.append(newEmail)
-        print("Email address to add: \(newEmail)")
-        tfEmail.text = nil
+        if (UIApplication.shared.delegate as! AppDelegate).isDebug {
+            print("Email address to add: \(newEmail)")
+        }
         
+        tfEmail.text = nil
         tableView.reloadData()
     }
     
@@ -119,7 +106,7 @@ class AddUserViewController: UIViewController {
             return ValidationError.missingName
         }
         
-        guard isNameExist(name: userInputName) == false else {
+        guard DBService.shared.isNameExist(name: userInputName) == false else {
             return ValidationError.nameDuplication
         }
         
@@ -138,11 +125,6 @@ class AddUserViewController: UIViewController {
         return nil
     }
     
-    private func isNameExist(name: String) -> Bool {
-        let results = theRealm!.objects(User.self).filter("name = %@", name)
-        return results.count > 0
-    }
-    
     private func isValidEmail(userInput: String) -> Bool {
         let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return predicate.evaluate(with: userInput)
@@ -155,7 +137,9 @@ class AddUserViewController: UIViewController {
         formatter.timeZone = TimeZone.current
         
         if let birthDate = formatter.date(from: userInput) {
-            print("Valid birth date: \(birthDate)")
+            if (UIApplication.shared.delegate as! AppDelegate).isDebug {
+                print("Valid birth date: \(birthDate)")
+            }
             return birthDate
         }
         
@@ -169,7 +153,9 @@ class AddUserViewController: UIViewController {
             return nil
         }
         
-        print("Date components: \(parts)")
+        if (UIApplication.shared.delegate as! AppDelegate).isDebug {
+            print("Date components: \(parts)")
+        }
         
         guard parts[0].count == 4 else {
             return nil
