@@ -12,6 +12,7 @@ import RealmSwift
 class UserListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var lbNoResults: UILabel!
     
     private var users: Results<User>!
     private let cellID = "UserCell"
@@ -23,6 +24,7 @@ class UserListViewController: UIViewController {
         theRealm = try? Realm()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.dataSource = self
+        tableView.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +41,12 @@ class UserListViewController: UIViewController {
         print("Realm file: \(String(describing: realm.configuration.fileURL))")
         users = realm.objects(User.self)
         print("Users fetched: \(String(describing: users))")
-        tableView.reloadData()
+        
+        if users.count > 0 {
+            tableView.isHidden = false
+            lbNoResults.isHidden = true
+            tableView.reloadData()
+        }
     }
 }
 

@@ -9,6 +9,6 @@ target 'Uzzers' do
 use_frameworks!
 
 pod 'RealmSwift'
-pod 'Eureka'
+pod 'IQKeyboardManagerSwift'
 
 end
