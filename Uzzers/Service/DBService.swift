@@ -42,12 +42,13 @@ final class DBService {
      - Parameter emails: an array of EmalAddress objects that belongs to newUser
      - Returns: nil in the case of operation success otherwise an Error instance
     */
+    @discardableResult
     func addUser(_ newUser: User, emails: [EmailAddress]) -> Error? {
         do {
             try theRealm.write {
                 theRealm.add(newUser)
                 if (UIApplication.shared.delegate as! AppDelegate).isDebug {
-                    print("User added.")
+                    print("User added: \(newUser.name)")
                 }
                 theRealm.add(emails)
                 if (UIApplication.shared.delegate as! AppDelegate).isDebug {
@@ -73,6 +74,51 @@ final class DBService {
         return results.count > 0
     }
     
+    /**
+     Deletes a user with the given name from database.
+     - Parameter name: a String, representing the name of user we want to delete
+     - Returns: an Error instance in case of any problem during database operation, otherwise nil
+     */
+    @discardableResult
+    func deleteUser(with name: String) -> Error? {
+        do {
+            try theRealm.write {
+                let results = theRealm!.objects(User.self).filter("name = %@", name)
+                theRealm.delete(results)
+                if (UIApplication.shared.delegate as! AppDelegate).isDebug {
+                    print("User deleted: \(name)")
+                }
+            }
+        } catch {
+            print("Error occured when deleting User object. \(error)")
+            return error
+        }
+        
+        return nil
+    }
+    
+    /**
+     Deletes an email address from database.
+     - Parameter email: a String, representing the e-mail address
+     - Returns: an Error instance in case of any problem during database operation, otherwise nil
+     */
+    @discardableResult
+    func deleteEmail(_ email: String) -> Error? {
+        do {
+            try theRealm.write {
+                let results = theRealm!.objects(EmailAddress.self).filter("email = %@", email)
+                theRealm.delete(results)
+                if (UIApplication.shared.delegate as! AppDelegate).isDebug {
+                    print("EmailAddress deleted: \(email)")
+                }
+            }
+        } catch {
+            print("Error occured when deleting EmailAddress object. \(error)")
+            return error
+        }
+        
+        return nil
+    }
 }
 
 

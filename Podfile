@@ -11,4 +11,7 @@ use_frameworks!
 pod 'RealmSwift'
 pod 'IQKeyboardManagerSwift'
 
+    target 'UzzersTests' do
+        inherit! :search_paths
+    end
 end
